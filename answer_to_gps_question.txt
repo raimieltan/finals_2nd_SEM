@@ -1,0 +1,30 @@
+To start testing the gps feature what I would do first is to generate
+a list of mocked coordinates as basis.
+
+Next is I would use the Geocode api to convert for example
+"SM PASSI CITY" to its respective coordinates.
+
+since the geocode api would return a json It would just be easy write tests.
+
+for example:
+
+function geocodeFunction (query)
+    // use geocode api
+    return results
+
+expect(geocodeFunction('SM PASSI CITY")).toEqual ("123.456, 456,123")
+
+or this could be reversed by using also using google's reverse geocode
+the function would be modified to accept coordinates then it would return an 
+addresss
+
+Then I would test if the map renders correctly by using the
+React testing-libary.
+
+I would assign first a test-id to the map component then I would run a test
+
+expect(queryByTestId('map-component')).toBeTruthy.
+
+In mobile there are many ways to mock a location and
+if you are using android studio to emulate an android phone
+they have built in mock locations.
